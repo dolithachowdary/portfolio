@@ -169,17 +169,17 @@ const Sidebar = ({ onFileClick, activeFileId }) => {
                         <div className="timelineItem">
                             <div className="timelinePoint"><Briefcase size={14} /></div>
                             <div className="timelineInfo">
-                                <strong>2023 - Present</strong>
-                                <span>Software Engineer Intern</span>
-                                <small>TechNova Solutions</small>
+                                <strong>2024 - Present</strong>
+                                <span>DRDO Intern</span>
+                                <small>Defence Research & Development Organisation</small>
                             </div>
                         </div>
                         <div className="timelineItem">
                             <div className="timelinePoint"><Briefcase size={14} /></div>
                             <div className="timelineInfo">
-                                <strong>2022 - 2023</strong>
-                                <span>Open Source Contributor</span>
-                                <small>React & Documentation</small>
+                                <strong>2021 - 2025</strong>
+                                <span>B.Tech in Computer Science</span>
+                                <small>Undergraduate Student</small>
                             </div>
                         </div>
                     </div>
