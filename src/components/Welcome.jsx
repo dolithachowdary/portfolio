@@ -78,12 +78,12 @@ const Welcome = () => {
         }
 
         .main-title {
-          font-family: 'Playfair Display', serif;
+          font-family: 'Inter', sans-serif;
           font-size: 6rem;
-          font-style: italic;
-          font-weight: 400;
+          font-weight: 600;
           margin: 0;
           color: #ffffff;
+          letter-spacing: -2px;
         }
 
         .main-title span {

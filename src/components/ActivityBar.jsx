@@ -5,8 +5,9 @@ const ActivityBar = ({ activeGithub, onGithubClick, onExplorerClick }) => {
     return (
         <div className="activityBar">
             <div
-                className={"icon " + (activeGithub ? '' : "active")}
+                className={"icon has-tooltip " + (activeGithub ? '' : "active")}
                 onClick={onExplorerClick}
+                data-tooltip="( open me )"
             >
                 <Files size={24} />
             </div>
@@ -17,8 +18,9 @@ const ActivityBar = ({ activeGithub, onGithubClick, onExplorerClick }) => {
                 <GitBranch size={24} />
             </div>
             <div
-                className={"icon " + (activeGithub ? "active" : '')}
+                className={"icon has-tooltip " + (activeGithub ? "active" : '')}
                 onClick={onGithubClick}
+                data-tooltip="( open me )"
             >
                 <Github size={24} />
             </div>
@@ -40,6 +42,38 @@ const ActivityBar = ({ activeGithub, onGithubClick, onExplorerClick }) => {
           padding-top: 15px;
           gap: 20px;
           border-right: 1px solid #333333;
+          position: relative;
+        }
+
+        .has-tooltip {
+          position: relative;
+        }
+
+        .has-tooltip::after {
+          content: attr(data-tooltip);
+          position: absolute;
+          left: 80%;
+          top: 50%;
+          transform: translateY(-50%) scale(0.9);
+          background-color: #ffffff;
+          color: #000000;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 11px;
+          font-weight: 500;
+          white-space: nowrap;
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          z-index: 1000;
+          margin-left: 5px;
+        }
+
+        .has-tooltip:hover::after {
+          opacity: 1;
+          transform: translateY(-50%) scale(1);
+          left: 100%;
         }
 
         .icon {
