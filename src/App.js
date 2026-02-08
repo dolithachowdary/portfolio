@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.ctrlKey && e.altKey && e.key === 'i') {
+      if (e.ctrlKey && e.key.toLowerCase() === 'i') {
         e.preventDefault();
         setIsChatOpen(prev => !prev);
       }

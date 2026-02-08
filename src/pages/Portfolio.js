@@ -83,6 +83,39 @@ const Portfolio = ({ onFileChange, isChatOpen, onChatClose }) => {
         }
     };
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Ctrl + Alt + K: Open GitHub
+            if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                handeGithubClick();
+            }
+            // Ctrl + Shift + H: Home (Welcome)
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'h') {
+                e.preventDefault();
+                handleExplorerClick();
+                setActiveFileId(null);
+                onFileChange(null);
+            }
+            // Ctrl + T: Timeline (Scroll to sidebar section)
+            if (e.ctrlKey && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 't') {
+                e.preventDefault();
+                const timelineSection = document.getElementById('sidebar-timeline');
+                if (timelineSection) {
+                    timelineSection.scrollIntoView({ behavior: 'smooth' });
+                    // Visual feedback: brief highlight
+                    timelineSection.style.backgroundColor = 'rgba(0, 122, 204, 0.3)';
+                    setTimeout(() => {
+                        timelineSection.style.backgroundColor = '';
+                    }, 1000);
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isGithubOpen, openTabs, activeFileId]);
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 35px)', overflow: 'hidden' }}>
             <div style={{ display: 'flex', flex: 1, overflow: 'hidden', position: 'relative' }}>

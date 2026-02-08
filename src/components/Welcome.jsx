@@ -12,23 +12,19 @@ const Welcome = () => {
         <div className="shortcuts">
           <div className="shortcut-item">
             <span className="label">Open Chat</span>
-            <span className="key">Ctrl</span> + <span className="key">Alt</span> + <span className="key">I</span>
+            <span className="key">Ctrl</span> + <span className="key">I</span>
           </div>
           <div className="shortcut-item">
-            <span className="label">Show All Commands</span>
-            <span className="key">Ctrl</span> + <span className="key">Shift</span> + <span className="key">P</span>
+            <span className="label">Github Profile</span>
+            <span className="key">Ctrl</span> + <span className="key">Alt</span> + <span className="key">K</span>
           </div>
           <div className="shortcut-item">
-            <span className="label">Open File</span>
-            <span className="key">Ctrl</span> + <span className="key">O</span>
+            <span className="label">Home Page</span>
+            <span className="key">Ctrl</span> + <span className="key">Shift</span> + <span className="key">H</span>
           </div>
           <div className="shortcut-item">
-            <span className="label">Open Folder</span>
-            <span className="key">Ctrl</span> + <span className="key">K</span> <span className="key">Ctrl</span> + <span className="key">O</span>
-          </div>
-          <div className="shortcut-item">
-            <span className="label">Open Recent</span>
-            <span className="key">Ctrl</span> + <span className="key">R</span>
+            <span className="label">View Timeline</span>
+            <span className="key">Ctrl</span> + <span className="key">T</span>
           </div>
         </div>
       </div>
@@ -68,26 +64,33 @@ const Welcome = () => {
           text-align: center;
         }
 
-        .welcome-msg .small {
-          font-size: 1.5rem;
-          font-weight: 300;
-          letter-spacing: 2px;
-          opacity: 0.8;
-          display: block;
-          margin-bottom: -10px;
+        .welcome-msg {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
         }
 
         .main-title {
-          font-family: 'Inter', sans-serif;
-          font-size: 6rem;
-          font-weight: 600;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 4rem;
+          font-weight: 300;
           margin: 0;
           color: #ffffff;
-          letter-spacing: -2px;
+          letter-spacing: -0.5px;
         }
 
         .main-title span {
           color: #007acc;
+        }
+
+        .welcome-msg .small {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #858585;
+          letter-spacing: 0.5px;
+          display: block;
         }
 
         .shortcuts {
@@ -132,8 +135,8 @@ const Welcome = () => {
         }
 
         @media (max-width: 768px) {
-          .main-title { font-size: 4rem; }
-          .welcome-msg .small { font-size: 1.2rem; }
+          .main-title { font-size: 3rem; }
+          .welcome-msg .small { font-size: 1rem; }
         }
       `}</style>
     </div>

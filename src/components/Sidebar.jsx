@@ -9,9 +9,9 @@ const EXPLORER_DATA = [
         icon: 'file-text',
         content: {
             type: 'markdown',
-            title: "Hello, I'm Alex Chen",
-            subtitle: 'const profile = { name: "Alex Chen", role: "Full Stack Developer" };',
-            body: `I am currently a senior Computer Science student at Global University of Technology. I specialize in building distributed systems and high-performance web applications. When I'm not debugging threads, I'm contributing to open-source or tinkering with hardware.`
+            title: "Hello, I'm Dolitha Chowdary",
+            subtitle: 'const profile = { name: "Dolitha Chowdary", role: "Final-year CS Student & DRDO Intern" };',
+            body: `I am currently a final-year Computer Science student and an intern at DRDO. I am passionate about Data Science, Machine Learning, and building impactful software solutions. I specialize in Python and have experience with predictive modeling, real-time transcription, and advanced data structures.`
         }
     },
     {
@@ -22,9 +22,9 @@ const EXPLORER_DATA = [
         content: {
             type: 'json',
             data: {
-                languages: ['JavaScript', 'TypeScript', 'Python', 'Go', 'Java'],
-                frameworks: ['React', 'Next.js', 'Node.js', 'Express', 'FastAPI'],
-                tools: ['Docker', 'Kubernetes', 'AWS', 'Git', 'Linux']
+                languages: ['Python', 'JavaScript', 'SQL', 'C++'],
+                frameworks: ['React', 'FastAPI', 'Streamlit', 'TensorFlow', 'PyTorch'],
+                tools: ['Docker', 'Git', 'Linux', 'Whisper', 'OpenCV']
             }
         }
     },
@@ -35,28 +35,41 @@ const EXPLORER_DATA = [
         children: [
             {
                 id: 'project1',
-                name: 'quantum_ledger.js',
+                name: 'Summer-of-DSA.py',
                 type: 'file',
-                icon: 'box',
+                icon: 'code-2',
                 content: {
                     type: 'project',
-                    title: 'Quantum Ledger V2',
-                    description: 'A blockchain-based inventory system using Go and React.',
-                    link: '#',
-                    tags: ['Go', 'React', 'Blockchain']
+                    title: 'Summer-of-DSA',
+                    description: 'Advanced Data Structures & Algorithms solutions practiced during summer training.',
+                    link: 'https://github.com/dolithachowdary/Summer-of-DSA',
+                    tags: ['Python', 'DSA', 'Algorithms']
                 }
             },
             {
                 id: 'project2',
-                name: 'ai_vision.py',
+                name: 'heart_pred.py',
                 type: 'file',
                 icon: 'image',
                 content: {
                     type: 'project',
-                    title: 'AI Vision Engine',
-                    description: 'Real-time object detection and classification system.',
-                    link: '#',
-                    tags: ['Python', 'PyTorch', 'OpenCV']
+                    title: 'Heart Disease Prediction',
+                    description: 'Prediction of heart disease using retina images via deep learning.',
+                    link: 'https://projectheartdisease.streamlit.app/',
+                    tags: ['Python', 'Deep Learning', 'Streamlit']
+                }
+            },
+            {
+                id: 'project3',
+                name: 'meeting_transcriber.js',
+                type: 'file',
+                icon: 'box',
+                content: {
+                    type: 'project',
+                    title: 'Meeting Transcriber',
+                    description: 'Real-time speech-to-text with speaker identification using Whisper.',
+                    link: 'https://github.com/dolithachowdary/Meeting-transcriber',
+                    tags: ['JavaScript', 'FastAPI', 'AI']
                 }
             }
         ]
@@ -152,7 +165,7 @@ const Sidebar = ({ onFileClick, activeFileId }) => {
                 </SidebarSection>
 
                 <SidebarSection title="Timeline">
-                    <div className="timeline">
+                    <div className="timeline" id="sidebar-timeline">
                         <div className="timelineItem">
                             <div className="timelinePoint"><Briefcase size={14} /></div>
                             <div className="timelineInfo">
